@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Data (opcional)
+data/raw/*
+data/processed/*
+
+# Env
+.env
+.venv/
