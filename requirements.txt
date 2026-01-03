@@ -1,0 +1,23 @@
+# Core
+numpy<2
+pandas
+
+# Visualization
+plotly
+dash
+folium
+
+# Machine Learning
+scikit-learn
+
+# Data collection & scraping
+requests
+beautifulsoup4
+lxml
+
+# SQL
+sqlalchemy
+
+# Jupyter
+jupyter
+ipykernel
