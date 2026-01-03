@@ -1,33 +1,43 @@
-# 🚀 SpaceX Falcon 9 Landing Prediction
+# 🚀 SpaceX Falcon 9 Landing Success Prediction
 
-End-to-end **Data Science and Analytics project** focused on analyzing SpaceX Falcon 9 launch data to **predict first-stage landing success**.  
-The project covers the full data lifecycle: **data collection, cleaning, exploratory analysis, interactive visualization, and machine learning**, and includes a **live interactive dashboard**.
+End-to-end **Data Science & Machine Learning project** focused on analyzing SpaceX Falcon 9 launch data to **predict first-stage landing success**.
 
-This project is part of my professional portfolio and demonstrates applied skills in **Python, SQL, data visualization, and ML**, using real-world data sources.
+The project covers the complete data lifecycle — from **data collection and cleaning**, through **exploratory and geospatial analysis**, to **machine learning modeling** and an **interactive dashboard** for real-time exploration.
+
+This repository is part of my professional portfolio and demonstrates applied skills in **Python, SQL, data visualization, and machine learning**, using real-world aerospace data.
 
 ---
 
-## 📌 Project Overview
+## 📌 Project Motivation
 
-SpaceX significantly reduces launch costs by reusing the first stage of its Falcon 9 rockets.  
+SpaceX dramatically reduces launch costs by **reusing the first stage** of Falcon 9 rockets.  
 Accurately predicting whether a booster will land successfully is critical for:
 
-- Estimating launch costs
-- Improving operational planning
-- Supporting competitive bidding strategies in the aerospace industry
+- Estimating launch and refurbishment costs  
+- Improving operational planning  
+- Supporting data-driven decision-making in competitive aerospace contexts  
 
-The goal of this project is to **analyze historical launch data** and **build predictive models** to estimate landing success.
+The objective of this project is to **analyze historical launch data** and **build predictive models** that estimate the probability of a successful first-stage landing.
+
+---
+
+## 🧠 Key Questions Addressed
+
+- Which launch sites and rocket configurations have the highest landing success rates?
+- How has landing success evolved over time?
+- Can landing success be reliably predicted using historical data?
+- Which machine learning model performs best for this task?
 
 ---
 
 ## 🧱 Tech Stack
 
-- **Python**
+- **Python 3.10**
 - **Pandas, NumPy**
 - **SQL (SQLite)**
-- **Plotly, Dash**
-- **Folium**
 - **Scikit-learn**
+- **Plotly & Dash**
+- **Folium (geospatial analysis)**
 - **Jupyter Notebook**
 
 ---
@@ -53,12 +63,6 @@ spacex-falcon9-landing-prediction/
 │   ├── 05_eda_sql.ipynb
 │   └── 06_ml_prediction.ipynb
 │
-├── dashboard/
-│   ├── app.py
-│   ├── assets/
-│   │   └── style.css
-│   └── README.md
-│
 ├── src/
 │   ├── data_loader.py
 │   ├── preprocessing.py
@@ -67,7 +71,16 @@ spacex-falcon9-landing-prediction/
 │
 ├── models/
 │   ├── trained_models/
+│   │   └── random_forest_pipeline.pkl
 │   └── metrics/
+│       ├── model_comparison.csv
+│       └── confusion_matrix_random_forest.png
+│
+├── dashboard/
+│   ├── app.py
+│   ├── assets/
+│   │   └── style.css
+│   └── README.md
 │
 └── screenshots/
     ├── dashboard_all_sites.png
@@ -77,18 +90,46 @@ spacex-falcon9-landing-prediction/
 
 ---
 
-## 🔍 Key Features
+## 🔍 Project Highlights
 
-- Data collection via SpaceX public API and web scraping
+### Data Collection & Processing
+- SpaceX public API ingestion
+- Web scraping from Wikipedia
 - Data cleaning and feature engineering
-- SQL-based and visual exploratory data analysis
-- Interactive geospatial analysis with Folium
-- Interactive dashboard with Plotly Dash
-- Machine learning classification models with evaluation
+- Consolidated, reproducible data pipeline
+
+### Exploratory & Geospatial Analysis
+- SQL-based EDA
+- Visual trend analysis
+- Interactive launch site maps with Folium
+
+### Machine Learning
+- Classification models:
+  - Logistic Regression
+  - Decision Tree
+  - Random Forest
+- Performance evaluation using:
+  - Accuracy
+  - Precision
+  - Recall
+  - F1-score
+- Final model selection based on overall performance
+
+### Model Artifacts
+- Trained **Random Forest pipeline** serialized with `joblib`
+- Metrics exported to CSV
+- Confusion matrix saved as an image for reporting
+
+### Interactive Dashboard
+- Built with **Plotly Dash**
+- Dynamic filtering by launch site and rocket configuration
+- KPI indicators and success rate visualizations
 
 ---
 
 ## ▶️ Running the Project Locally
+
+### 1️⃣ Environment setup
 
 ```bash
 conda create -n spacex-ds python=3.10
@@ -96,19 +137,32 @@ conda activate spacex-ds
 conda install numpy<2 pandas scikit-learn plotly dash folium
 ```
 
+Or using the provided environment file:
+
+```bash
+conda env create -f environment.yml
+conda activate spacex-ds
+```
+
+### 2️⃣ Launch the dashboard
+
 ```bash
 cd dashboard
 python app.py
 ```
 
-Then open: http://127.0.0.1:8050/
+Open in your browser:
+
+```
+http://127.0.0.1:8050/
+```
 
 ---
 
 ## 🌐 Live Demo
 
-- Portfolio: https://razs.vercel.app/
-- Live dashboard: (to be added)
+- **Portfolio:** https://razs.vercel.app/
+- **Live Dashboard:** *(deployment link to be added)*
 
 ---
 
@@ -117,10 +171,10 @@ Then open: http://127.0.0.1:8050/
 **Ricardo Zermeño**  
 Software Engineer | Data & ERP-Oriented Developer  
 
-Portfolio: https://razs.vercel.app/
+🔗 Portfolio: https://razs.vercel.app/
 
 ---
 
 ## 📜 License
 
-Educational and portfolio use.
+This project is intended for **educational and portfolio purposes**.
