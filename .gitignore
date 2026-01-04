@@ -3,9 +3,9 @@ __pycache__/
 *.pyc
 .ipynb_checkpoints/
 
-# Data (opcional)
+# Data
 data/raw/*
-data/processed/*
+# data/processed/*
 
 # Env
 .env
