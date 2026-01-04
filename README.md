@@ -2,7 +2,7 @@
 
 End-to-end **Data Science & Machine Learning project** focused on analyzing SpaceX Falcon 9 launch data to **predict first-stage landing success**.
 
-The project covers the complete data lifecycle — from **data collection and cleaning**, through **exploratory and geospatial analysis**, to **machine learning modeling** and an **interactive dashboard** for real-time exploration.
+The project covers the complete data lifecycle — from **data collection and cleaning**, through **exploratory and geospatial analysis**, to **machine learning modeling** and an **interactive dashboard** deployed live.
 
 This repository is part of my professional portfolio and demonstrates applied skills in **Python, SQL, data visualization, and machine learning**, using real-world aerospace data.
 
@@ -46,10 +46,6 @@ The objective of this project is to **analyze historical launch data** and **bui
 
 ```text
 spacex-falcon9-landing-prediction/
-├── README.md
-├── requirements.txt
-├── environment.yml
-│
 ├── data/
 │   ├── raw/
 │   ├── processed/
@@ -74,104 +70,79 @@ spacex-falcon9-landing-prediction/
 │   │   └── random_forest_pipeline.pkl
 │   └── metrics/
 │       ├── model_comparison.csv
+│       ├── model_comparison.png
 │       └── confusion_matrix_random_forest.png
 │
 ├── dashboard/
 │   ├── app.py
-│   ├── assets/
-│   │   └── style.css
+│   ├── assets/style.css
 │   └── README.md
 │
-└── screenshots/
-    ├── dashboard_all_sites.png
-    ├── dashboard_site_filter.png
-    └── folium_map.png
+├── screenshots/
+│   ├── dashboard_all_sites.png
+│   ├── dashboard_site_filter.png
+│   └── folium_map.png
+│
+├── requirements.txt
+├── environment.yml
+├── runtime.txt
+└── README.md
 ```
 
 ---
 
 ## 🔍 Project Highlights
 
-### Data Collection & Processing
-- SpaceX public API ingestion
-- Web scraping from Wikipedia
-- Data cleaning and feature engineering
-- Consolidated, reproducible data pipeline
+### 📊 Exploratory & Geospatial Analysis
+- Visual trend analysis of landing success
+- Interactive launch site map built with **Folium**
+- Map exported as `screenshots/folium_map.png`
 
-### Exploratory & Geospatial Analysis
-- SQL-based EDA
-- Visual trend analysis
-- Interactive launch site maps with Folium
-
-### Machine Learning
-- Classification models:
+### 🤖 Machine Learning
+- Models trained and evaluated:
   - Logistic Regression
   - Decision Tree
   - Random Forest
-- Performance evaluation using:
+- Evaluation metrics:
   - Accuracy
   - Precision
   - Recall
   - F1-score
-- Final model selection based on overall performance
+- Metrics exported to `model_comparison.csv` and `model_comparison.png`
+- Confusion matrix saved as `confusion_matrix_random_forest.png`
 
-### Model Artifacts
-- Trained **Random Forest pipeline** serialized with `joblib`
-- Metrics exported to CSV
-- Confusion matrix saved as an image for reporting
+### 🧠 Model Artifact
+- Final **Random Forest pipeline** serialized with `joblib`
+- Stored at:
+  ```
+  models/trained_models/random_forest_pipeline.pkl
+  ```
+- Includes preprocessing + model steps for full reproducibility
+- Used as a production-ready artifact (even if not loaded in the dashboard)
 
-### Interactive Dashboard
+### 📈 Interactive Dashboard
 - Built with **Plotly Dash**
-- Dynamic filtering by launch site and rocket configuration
-- KPI indicators and success rate visualizations
-
----
-
-## ▶️ Running the Project Locally
-
-### 1️⃣ Environment setup
-
-```bash
-conda create -n spacex-ds python=3.10
-conda activate spacex-ds
-conda install numpy<2 pandas scikit-learn plotly dash folium
-```
-
-Or using the provided environment file:
-
-```bash
-conda env create -f environment.yml
-conda activate spacex-ds
-```
-
-### 2️⃣ Launch the dashboard
-
-```bash
-cd dashboard
-python app.py
-```
-
-Open in your browser:
-
-```
-http://127.0.0.1:8050/
-```
-
----
-
-## 🧪 Environment Management
-
-- `environment.yml` is provided for local development and notebook execution using Conda.
-- `requirements.txt` is used for production deployment (Render).
-
-The deployment environment does not rely on Conda.
+- Filters by launch site and rocket
+- KPIs and success-rate visualizations
+- Deployed on Render
 
 ---
 
 ## 🌐 Live Demo
 
+- **Live Dashboard:** https://spacex-falcon9-landing-prediction-zve7.onrender.com/
 - **Portfolio:** https://razs.vercel.app/
-- **Live Dashboard:** *(deployment link to be added)*
+
+---
+
+## ▶️ Running Locally
+
+```bash
+conda env create -f environment.yml
+conda activate spacex-ds
+cd dashboard
+python app.py
+```
 
 ---
 
@@ -186,4 +157,4 @@ Software Engineer | Data & ERP-Oriented Developer
 
 ## 📜 License
 
-This project is intended for **educational and portfolio purposes**.
+Educational and portfolio use.
