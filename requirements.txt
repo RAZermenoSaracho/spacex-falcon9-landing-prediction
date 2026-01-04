@@ -1,23 +1,40 @@
+# ----------------------------
 # Core
+# ----------------------------
 numpy<2
 pandas
 
-# Visualization
+# ----------------------------
+# Visualization & Dashboard
+# ----------------------------
 plotly
 dash
-folium
 
+# ----------------------------
 # Machine Learning
+# ----------------------------
 scikit-learn
+joblib
 
+# ----------------------------
 # Data collection & scraping
+# ----------------------------
 requests
 beautifulsoup4
 lxml
 
+# ----------------------------
 # SQL
+# ----------------------------
 sqlalchemy
 
-# Jupyter
-jupyter
-ipykernel
+# Server
+gunicorn
+
+# ----------------------------
+# Optional (local only)
+# ----------------------------
+# jupyter
+# ipykernel
+# folium
+

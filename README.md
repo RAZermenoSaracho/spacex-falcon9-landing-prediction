@@ -159,6 +159,15 @@ http://127.0.0.1:8050/
 
 ---
 
+## 🧪 Environment Management
+
+- `environment.yml` is provided for local development and notebook execution using Conda.
+- `requirements.txt` is used for production deployment (Render).
+
+The deployment environment does not rely on Conda.
+
+---
+
 ## 🌐 Live Demo
 
 - **Portfolio:** https://razs.vercel.app/
